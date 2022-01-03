@@ -36,7 +36,7 @@ Then add Electron as a dev dependency:
 $ npm i electron@13.5.1 --save-dev --save-exact
 ```
 
-We will be using Electron version 13.5.1 in this template. You may use another version, but the template may not work as functions differ between versions. ``--save-exact` ensures that `npm` will always use version 13.5.1 of Electron.  
+We will be using Electron version 13.5.1 in this template. You may use another version, but the template may not work as functions differ between major versions. `--save-exact` ensures that `npm` will always use version 13.5.1 of Electron.  
 
 Add electron-builder and electron-updater as a dev dependecy:
 
