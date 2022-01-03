@@ -44,7 +44,7 @@ Add electron-builder and electron-updater as a dev dependecy:
 $ npm i electron-updater --save-dev
 ```
 
-Add the following event based code to your Electron js file, by default it will be `index.js`:
+Add the following event based code to your Electron js file; by default it will be `index.js`:
 
 ```js
 const { autoUpdater } = require("electron-updater"); // import the module
