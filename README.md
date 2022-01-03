@@ -46,7 +46,7 @@ To build the app, add the following to `package.json`:
 
 Replace `wrrnlim` with your GitHub username and `electron-app-template` with the link to your public repository where releases will be made. You can set your icon path in `icon`, and change your build directory in `output`. The default build directory is `dist`.  
 
-Next, add the following to `scripts`:
+Next, add the following to the `scripts` section in `package.json`:
 
 ```json
 "publish": "electron-builder -p always"
