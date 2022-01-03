@@ -24,6 +24,40 @@ and run with:
 $ npm start
 ```
 
+## Build
+
+To build the app, add the following to `package.json`:
+
+```json
+"build": {
+    "appId": "com.github.wrrnlim.electron-app-template",
+    "win": {
+    "icon": "assets/icons/icon.ico",
+    "target": "nsis"
+    },
+    "nsis": {
+    "oneClick": false
+    },
+    "directories": {
+    "output": "release"
+    }
+}
+```
+
+Replace `wrrnlim` with your GitHub username and `electron-app-template` with the link to your public repository where releases will be made. You can set your icon path in `icon`, and change your build directory in `output`. The default build directory is `dist`.  
+
+Next, add the following to `scripts`:
+
+```json
+"publish": "electron-builder -p always"
+```
+
+You can now build the app using:
+
+```shell
+npm publish
+```
+
 ## Guide to set up your own Electron project with auto-updater
 
 The following steps will explain how I created this template repository. I am not an expert in Electron and there may be more elegant ways to create an auto-updating Electron app; this is just the steps I took to create my first Electron app. Please open an [issue](https://github.com/wrrnlim/electron-app-template/issues/new/choose) if there is a better way to complete any of the steps below!  
