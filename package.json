@@ -4,7 +4,8 @@
   "description": "Electron App Template with auto-updater",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "publish": "electron-builder -p always"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,19 @@
   "devDependencies": {
     "electron": "13.5.1",
     "electron-updater": "^4.6.1"
+  },
+  "build": {
+    "appId": "com.github.wrrnlim.electron-app-template",
+    "win": {
+      "icon": "assets/icons/icon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false
+    },
+    "directories": {
+      "buildResources": "assets",
+      "output": "release"
+    }
   }
 }
