@@ -20,7 +20,7 @@ $ npm start
 
 The following steps will explain how I created this template repository. I am not an expert in Electron and there may be more elegant ways to create an auto-updating Electron app; this is just the steps I took to create my first Electron app. Please open an [issue](https://github.com/wrrnlim/electron-app-template/issues/new/choose) if there is a better way to complete any of the steps below!  
 
-The examples will utilize [`npm`](https://www.npmjs.com/). You may also use [`yarn`](https://yarnpkg.com/). `npm` can be installed with [nodejs](https://nodejs.org/en/).  
+The examples will utilize [npm](https://www.npmjs.com/). You may also use [yarn](https://yarnpkg.com/). `npm` can be installed with [nodejs](https://nodejs.org/en/).  
 
 To start an npm project:
 
