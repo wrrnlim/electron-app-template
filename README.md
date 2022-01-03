@@ -4,10 +4,17 @@ This is a template repository for an [Electron](https://www.electronjs.org/) app
 
 ## Initialization
 
-To get started on an Electron app using this template, clone the reposity and install all dependencies with:  
-```$ npm install```  
-and run with:  
-```$ npm start```
+To get started on an Electron app using this template, clone the reposity and install all dependencies with:
+
+```shell
+$ npm install
+```  
+
+and run with:
+
+```shell
+$ npm start
+```
 
 ## Guide to set up your own Electron project with auto-updater
 
@@ -15,16 +22,27 @@ The following steps will explain how I created this template repository. I am no
 
 The examples will utilize [`npm`](https://www.npmjs.com/). You may also use [`yarn`](https://yarnpkg.com/). `npm` can be installed with [nodejs](https://nodejs.org/en/).  
 
-To start an npm project:  
-```$ npm init```  
+To start an npm project:
+
+```shell
+$ npm init
+```  
+
 Add the `-y` flag to skip initialization prompts.  
 
-Then add Electron as a dev dependency:  
-```$ npm i electron@13.5.1 --save-dev --save-exact```  
+Then add Electron as a dev dependency:
+
+```shell
+$ npm i electron@13.5.1 --save-dev --save-exact
+```
+
 We will be using Electron version 13.5.1 in this template. You may use another version, but the template may not work as functions differ between versions. ``--save-exact` ensures that `npm` will always use version 13.5.1 of Electron.  
 
-Add electron-builder and electron-updater as a dev dependecy:  
-```$ npm i electron-updater --save-dev```  
+Add electron-builder and electron-updater as a dev dependecy:
+
+```shell
+$ npm i electron-updater --save-dev
+```  
 
 ## Resources used
 
