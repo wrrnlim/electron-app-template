@@ -56,7 +56,12 @@ const menuTemplate = [
     }, {
         label: 'Help',
         submenu: [
-            { label: 'About', },
+            { 
+                label: 'About',
+                click: () => {
+                    shell.openExternal('https://github.com/wrrnlim/electron-app-template')
+                }
+            },
             {
                 label: 'Report an Issue',
                 click: () => {

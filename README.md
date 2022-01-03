@@ -42,7 +42,34 @@ Add electron-builder and electron-updater as a dev dependecy:
 
 ```shell
 $ npm i electron-updater --save-dev
-```  
+```
+
+Add the following event based code to your Electron js file, by default it will be `index.js`:
+
+```js
+const { autoUpdater } = require("electron-updater"); // import the module
+
+autoUpdater.on('checking-for-update', () => {
+    showStatus('Checking for update...');
+})
+autoUpdater.on('update-available', (info) => {
+    showStatus('Update found! Installation will begin shortly.');
+})
+autoUpdater.on('update-not-available', (info) => {
+    showStatus('You have the newest version!');
+})
+autoUpdater.on('error', (err) => {
+    showStatus('Error in auto-updater. ' + err);
+})
+autoUpdater.on('download-progress', (progressObj) => {
+    showStatus('Downloading: ' + progressObj.percent.toFixed(2) + '%');
+})
+autoUpdater.on('update-downloaded', (info) => {
+    showStatus('Update downloaded. Restart the app to apply update.');
+});
+```
+
+`showStatus()` is a function that sends the status string to where you want to display it.
 
 ## Resources used
 
