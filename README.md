@@ -7,8 +7,9 @@ This is a template repository for an [Electron](https://www.electronjs.org/) app
 ## Table of Contents
 
 - [Initialization](#Initialization)
-- [Build](#Build)
-- [Guide to set up your own Electron project with auto-updater](#guide-to-set-up-your-own-electron-project-with-auto-updater)
+- [`npm` basics](#npm-basics)
+- [Setting up auto-updater](#guide-to-set-up-your-own-electron-project-with-auto-updater)
+- [Building the app](#Build)
 
 ## Initialization
 
