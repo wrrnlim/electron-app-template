@@ -53,11 +53,20 @@ Next, add the following to the `scripts` section in `package.json`:
 "publish": "electron-builder -p always"
 ```
 
+Set your GitHub [Personal Access Token (PAT)](https://github.com/settings/tokens/) as an environment variable:
+
+```shell
+$ export GH_TOKEN="<YOUR_TOKEN_HERE>"
+```
+
+Keep your PAT in a safe location. You will need to set it in your environment varibales everytime you need to build the app.  
 You can now build the app using:
 
 ```shell
-npm publish
+$ npm run publish
 ```
+
+This will create a draft release in your GitHub repository with the built app installer uploaded. Edit the release to publish it
 
 ## Guide to set up your own Electron project with auto-updater
 
