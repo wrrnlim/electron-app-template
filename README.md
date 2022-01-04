@@ -1,6 +1,6 @@
 # Electron App Template With Auto-Updater
 
-This is a template repository for an [Electron](https://www.electronjs.org/) app with an auto-update menu option. Trigger the auto-update code within `app.on('ready') to have auto updates on start up. The auto-updater uses [electron-updater](https://www.npmjs.com/package/electron-updater) to check app version against GitHub Releases, and updates the app if necessary. The below guide will help you get started on an Electron project.  
+This is a template repository for an [Electron](https://www.electronjs.org/) app with an auto-update menu option. Trigger the auto-update code within `app.on('ready')` to have auto updates on start up. The auto-updater uses [electron-updater](https://www.npmjs.com/package/electron-updater) to check app version against GitHub Releases, and updates the app if necessary. The below guide will help you get started on an Electron project.  
 
 *Note: Releases must be on a public repository for auto-updates to work. If you want to keep your code private, create a separate repository and create releases there.*
 
@@ -9,7 +9,7 @@ This is a template repository for an [Electron](https://www.electronjs.org/) app
 - [Initialization](#Initialization)
 - [npm basics](#npm-basics)
 - [Setting up auto-updater](#guide-to-set-up-your-own-electron-project-with-auto-updater)
-- [Building the app](#Build)
+- [Building the app](#Building-the-app)
 
 ## Initialization
 
@@ -24,49 +24,6 @@ and run with:
 ```shell
 $ npm start
 ```
-
-## Build
-
-To build the app, add the following to `package.json`:
-
-```json
-"build": {
-    "appId": "com.github.wrrnlim.electron-app-template",
-    "win": {
-    "icon": "assets/icons/icon.ico",
-    "target": "nsis"
-    },
-    "nsis": {
-    "oneClick": false
-    },
-    "directories": {
-    "output": "release"
-    }
-}
-```
-
-Replace `wrrnlim` with your GitHub username and `electron-app-template` with the link to your public repository where releases will be made. You can set your icon path in `icon`, and change your build directory in `output`. The default build directory is `dist`.  
-
-Next, add the following to the `scripts` section in `package.json`:
-
-```json
-"publish": "electron-builder -p always"
-```
-
-Set your GitHub [Personal Access Token (PAT)](https://github.com/settings/tokens/) as an environment variable:
-
-```shell
-$ export GH_TOKEN="<YOUR_TOKEN_HERE>"
-```
-
-Keep your PAT in a safe location. You will need to set it in your environment varibales everytime you need to build the app.  
-You can now build the app using:
-
-```shell
-$ npm run publish
-```
-
-This will create a draft release in your GitHub repository with the built app installer uploaded. Edit the release to publish it
 
 ## Guide to set up your own Electron project with auto-updater
 
@@ -122,6 +79,50 @@ autoUpdater.on('update-downloaded', (info) => {
 ```
 
 `showStatus()` is a function that sends the status string to where you want to display it.
+
+
+## Building the app
+
+To build the app, add the following to `package.json`:
+
+```json
+"build": {
+    "appId": "com.github.wrrnlim.electron-app-template",
+    "win": {
+    "icon": "assets/icons/icon.ico",
+    "target": "nsis"
+    },
+    "nsis": {
+    "oneClick": false
+    },
+    "directories": {
+    "output": "release"
+    }
+}
+```
+
+Replace `wrrnlim` with your GitHub username and `electron-app-template` with the link to your public repository where releases will be made. You can set your icon path in `icon`, and change your build directory in `output`. The default build directory is `dist`.  
+
+Next, add the following to the `scripts` section in `package.json`:
+
+```json
+"publish": "electron-builder -p always"
+```
+
+Set your GitHub [Personal Access Token (PAT)](https://github.com/settings/tokens/) as an environment variable:
+
+```shell
+$ export GH_TOKEN="<YOUR_TOKEN_HERE>"
+```
+
+Keep your PAT in a safe location. You will need to set it in your environment varibales everytime you need to build the app.  
+You can now build the app using:
+
+```shell
+$ npm run publish
+```
+
+This will create a draft release in your GitHub repository with the built app installer uploaded. Edit the release to publish it. These releases are what the auto-updater checks for when checking for updates.
 
 ## Resources used
 
