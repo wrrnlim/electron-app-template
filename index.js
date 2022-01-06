@@ -120,22 +120,30 @@ app.on('ready', () => {
  * Create the update window
  */
 function createUpdateWindow() {
-    updateWindow = new BrowserWindow({
-        width: 400,
-        height: 210,
-        title: 'Updater',
-        parent: mainWindow,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-            enableRemoteModule: true,
-        }
-    });
-    updateWindow.setMenu(null);
-    updateWindow.loadFile('src/update.html');
-    /* Wait for contents to load then set status */
-    updateWindow.webContents.on('did-finish-load', () => {
-        updateWindow.webContents.send('version', version);
+    if (!updateWindow) { // Prevent update window from being created multiple times
+        updateWindow = new BrowserWindow({
+            width: 400,
+            height: 210,
+            title: 'Updater',
+            parent: mainWindow,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false,
+                enableRemoteModule: true,
+            }
+        });
+        updateWindow.setMenu(null);
+        updateWindow.loadFile('src/update.html');
+        /* Wait for contents to load then set status */
+        updateWindow.webContents.on('did-finish-load', () => {
+            updateWindow.webContents.send('version', version);
+        });
+    }
+    else {
+        updateWindow.focus();
+    }
+    updateWindow.on('closed', () => { // set updateWindow to null so it can be created again
+        updateWindow = null;
     });
 }
 
