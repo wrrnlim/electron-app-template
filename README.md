@@ -50,6 +50,10 @@ We will be using Electron version 13.5.1 in this template. You may use another v
 Add electron-builder and electron-updater as a dev dependecy:
 
 ```shell
+$ npm i electron-builder --save-dev
+```
+
+```shell
 $ npm i electron-updater --save-dev
 ```
 
