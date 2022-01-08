@@ -47,14 +47,16 @@ $ npm i electron@13.5.1 --save-dev --save-exact
 
 We will be using Electron version 13.5.1 in this template. You may use another version, but the template may not work as functions differ between major versions. `--save-exact` ensures that `npm` will always use version 13.5.1 of Electron.  
 
-Add electron-builder and electron-updater as a dev dependecy:
+Add electron-builder and electron-updater as dependecies:
 
 ```shell
 $ npm i electron-builder --save-dev
 ```
 
+`electron-updater` has to be saved as a dependency, not as a dev-dependency:
+
 ```shell
-$ npm i electron-updater --save-dev
+$ npm i electron-updater --save
 ```
 
 Add the following event based code to your Electron js file; by default it will be `index.js`:
@@ -106,6 +108,14 @@ To build the app, add the following to `package.json`:
 ```
 
 Replace `wrrnlim` with your GitHub username and `electron-app-template` with the link to your public repository where releases will be made. You can set your icon path in `icon`, and change your build directory in `output`. The default build directory is `dist`. Note that for `.png` icons, the minimum size is 256x256px.
+
+Add a product name if you like, and remember to change version number on new builds:
+
+```json
+  "name": "electron-app-template",
+  "productName": "Electron App Template",
+  "version": "2.0.0",
+```
 
 Next, add the following to the `scripts` section in `package.json`:
 
