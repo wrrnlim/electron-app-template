@@ -119,8 +119,7 @@ Set your GitHub [Personal Access Token (PAT)](https://github.com/settings/tokens
 $ export GH_TOKEN="<YOUR_TOKEN_HERE>"
 ```
 
-Keep your PAT in a safe location. You will need to set it in your environment varibales everytime you need to build the app.  
-You can now build the app using:
+Keep your PAT in a safe location. You will need to set it in your environment varibales everytime you need to build the app. nsure that there are no releases or draft releases in you repository with the same title. You can now build the app using:
 
 ```shell
 $ npm run publish
