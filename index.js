@@ -65,7 +65,7 @@ const menuTemplate = [
             {
                 label: 'Report an Issue',
                 click: () => {
-                    shell.openExternal('https://github.com/wrrnlim/electron-app-template/new/choose')
+                    shell.openExternal('https://github.com/wrrnlim/electron-app-template/issues/new/choose')
                 }
             },
             {
