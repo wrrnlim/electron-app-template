@@ -5,7 +5,7 @@ This is a template repository for an [Electron](https://www.electronjs.org/) app
 
 *Note: Releases must be on a public repository for auto-updates to work. If you want to keep your code private, create a separate repository and create releases there.*
 
-[!screenshot](/assets/img/electron-app-template-screenshot.png)
+![screenshot](/assets/img/electron-app-template-screenshot.png)
 
 ## Table of Contents
 
