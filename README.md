@@ -1,4 +1,5 @@
 # Electron App Template With Auto-Updater
+![status](https://img.shields.io/badge/Status-Work%20in%20Progress-yellow)
 
 This is a template repository for an [Electron](https://www.electronjs.org/) app with an auto-update menu option. Trigger the auto-update code within `app.on('ready')` to have auto updates on start up. The auto-updater uses [electron-updater](https://www.npmjs.com/package/electron-updater) to check app version against GitHub Releases, and updates the app if necessary. The below guide will help you get started on an Electron project.  
 
