@@ -1,5 +1,6 @@
 {
   "name": "electron-app-template",
+  "productName": "Electron App Template",
   "version": "1.0.0",
   "description": "Electron App Template with auto-updater",
   "main": "index.js",
