@@ -32,9 +32,12 @@ $ npm start
 ## Things to change
 
 Make sure to change the following in `package.json`
--[ ] App name, version, description, etc
--[ ] `"build":{"appId"}` to be your release repository
--[ ] Set your app icon path in `build`
+- [ ] App name, version, description, etc
+- [ ] `"build":{"appId"}` to be your release repository
+- [ ] Set your app icon path in `build`
+And change the following in `index.js`
+- [ ] Menu links in `menuTemplate` variable
+- [ ] Window titles
 
 ## Starting your own ELectron project
 
