@@ -39,7 +39,7 @@ And change the following in `index.js`
 - [ ] Menu links in `menuTemplate` variable
 - [ ] Window titles
 
-## Starting your own ELectron project
+## Starting your own Electron project
 
 If you are completely new to npm and/or Electron, I have outlined what this code does and the steps I have taken to create this repository in the [wiki](https://github.com/wrrnlim/electron-app-template/wiki/Starting-an-Electron-Project).
 
