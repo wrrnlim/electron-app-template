@@ -32,12 +32,14 @@ $ npm start
 ## Things to change
 
 Make sure to change the following in `package.json`
+
 - [ ] App name, version, description, etc
 - [ ] `"build":{"appId"}` to be your release repository
 - [ ] Set your app icon path in `build`
 And change the following in `index.js`
 - [ ] Menu links in `menuTemplate` variable
 - [ ] Window titles
+- [ ] Change icon path
 
 ## Starting your own Electron project
 

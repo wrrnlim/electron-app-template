@@ -11,7 +11,7 @@ const version = `v${app.getVersion()}`;
 console.log(`Starting ${version}`);
 
 /* Menus */
-const menuTemplate = [
+const menuTemplate = [ // TODO change menu items
     {
         label: 'File',
         submenu: [
@@ -94,12 +94,15 @@ const menuTemplate = [
  */
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        title: 'Electron App Template',
+        title: 'Electron App Template', // TODO change window title
+        width: 800,
+        height: 600,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
             enableRemoteModule: true,
-        }
+        },
+        icon: './assets/img/icon.ico' // TODO change icon path
     });
 
     /* Open links in external browser */
