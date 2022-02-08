@@ -126,7 +126,7 @@ function createUpdateWindow() {
     if (!updateWindow) { // Prevent update window from being created multiple times
         updateWindow = new BrowserWindow({
             width: 400,
-            height: 250,
+            height: 255,
             title: 'Updater',
             parent: mainWindow,
             webPreferences: {
@@ -135,7 +135,7 @@ function createUpdateWindow() {
                 enableRemoteModule: true,
             }
         });
-        updateWindow.setMenu(null);
+        // updateWindow.setMenu(null);
         updateWindow.loadFile('src/update.html');
         /* Wait for contents to load then set status */
         updateWindow.webContents.on('did-finish-load', () => {
@@ -183,7 +183,7 @@ autoUpdater.on('update-downloaded', (info) => {
 /**
  * IPC Listeners
  */
-ipcMain.on('restart_app', () => {
+ipcMain.on('restart-app', () => {
     autoUpdater.quitAndInstall();
 });
 
