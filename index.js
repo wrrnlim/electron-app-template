@@ -126,7 +126,7 @@ function createUpdateWindow() {
     if (!updateWindow) { // Prevent update window from being created multiple times
         updateWindow = new BrowserWindow({
             width: 400,
-            height: 210,
+            height: 250,
             title: 'Updater',
             parent: mainWindow,
             webPreferences: {
@@ -176,27 +176,18 @@ autoUpdater.on('download-progress', (progressObj) => {
     showStatus('Downloading: ' + progressObj.percent.toFixed(2) + '%');
 })
 autoUpdater.on('update-downloaded', (info) => {
+    updateWindow.webContents.send('show-buttons');
     showStatus('Update downloaded. Restart the app to apply update.');
 });
 
 /**
  * IPC Listeners
  */
-ipcMain.on('app-restart', (event) => {
-    mainWindow.loadFile('src/index.html');
+ipcMain.on('restart_app', () => {
+    autoUpdater.quitAndInstall();
 });
 
-ipcMain.on('open-folder', (event, path) => {
-    console.log(path);
-    shell.showItemInFolder(path);
+ipcMain.on('close-update-window', () => {
+    updateWindow.close();
 });
 
-ipcMain.on('format-done', (event, formattedData) => {
-    data = formattedData;
-    mainWindow.webContents.send('formatted-data', data);
-    mainWindow.loadFile('src/save.html');
-});
-
-ipcMain.on('data-request', (event) => {
-    mainWindow.webContents.send('formatted-data', data);
-});
