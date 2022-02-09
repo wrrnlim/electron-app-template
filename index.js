@@ -126,7 +126,7 @@ function createUpdateWindow() {
     if (!updateWindow) { // Prevent update window from being created multiple times
         updateWindow = new BrowserWindow({
             width: 400,
-            height: 255,
+            height: 250,
             title: 'Updater',
             parent: mainWindow,
             webPreferences: {
@@ -164,7 +164,7 @@ autoUpdater.on('checking-for-update', () => {
     showStatus('Checking for update...');
 })
 autoUpdater.on('update-available', (info) => {
-    showStatus('Update found! Installation will begin shortly.');
+    showStatus('Update found! Download will begin shortly.');
 })
 autoUpdater.on('update-not-available', (info) => {
     showStatus('You have the newest version!');
@@ -177,14 +177,14 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
     updateWindow.webContents.send('show-buttons');
-    showStatus('Update downloaded. Restart the app to apply update.');
+    showStatus('Update downloaded. Restart app to apply update.');
 });
 
 /**
  * IPC Listeners
  */
 ipcMain.on('restart-app', () => {
-    autoUpdater.quitAndInstall();
+    autoUpdater.quitAndInstall(isSilent = true, isForceRunAfter = true);
 });
 
 ipcMain.on('close-update-window', () => {
