@@ -161,7 +161,7 @@ function showStatus(status) {
  * Auto updater
  */
 autoUpdater.on('checking-for-update', () => {
-    showStatus('Checking for update...');
+    showStatus('Checking for updates...');
 })
 autoUpdater.on('update-available', (info) => {
     showStatus('Update found! Download will begin shortly.');
