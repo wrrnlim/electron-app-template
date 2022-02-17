@@ -59,13 +59,13 @@ const menuTemplate = [ // TODO change menu items
             { 
                 label: 'About',
                 click: () => {
-                    shell.openExternal('https://github.com/wrrnlim/electron-app-template')
+                    shell.openExternal('https://github.com/wrrnlim/electron-app-template') // TODO change URL
                 }
             },
             {
                 label: 'Report an Issue',
                 click: () => {
-                    shell.openExternal('https://github.com/wrrnlim/electron-app-template/issues/new/choose')
+                    shell.openExternal('https://github.com/wrrnlim/electron-app-template/issues/new/choose') // TODO change URL
                 }
             },
             {
