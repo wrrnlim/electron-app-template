@@ -99,7 +99,6 @@ app.on('ready', () => {
         height: 600,
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false,
             enableRemoteModule: true,
         },
         icon: './assets/img/icon.ico' // TODO change icon path
@@ -131,7 +130,6 @@ function createUpdateWindow() {
             parent: mainWindow,
             webPreferences: {
                 nodeIntegration: true,
-                contextIsolation: false,
                 enableRemoteModule: true,
             }
         });
