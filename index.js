@@ -133,9 +133,9 @@ function createUpdateWindow() {
                 nodeIntegration: true,
                 contextIsolation: false,
                 enableRemoteModule: true,
-            }
+            },
+            icon: './assets/icons/icon.ico' // TODO change icon path
         });
-        // updateWindow.setMenu(null);
         updateWindow.loadFile('src/update.html');
         /* Wait for contents to load then set status */
         updateWindow.webContents.on('did-finish-load', () => {
