@@ -33,7 +33,8 @@
       "target": "nsis"
     },
     "nsis": {
-      "oneClick": false
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     },
     "directories": {
       "buildResources": "assets",
