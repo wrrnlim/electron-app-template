@@ -5,6 +5,7 @@ const electron = require('electron');
 const { app, BrowserWindow, ipcMain, shell, Menu } = electron; // ES6 destructuring -> equivalent to app = electron.app etc
 const { autoUpdater } = require("electron-updater");
 
+const debug = /--debug/.test(process.argv[2])
 
 let mainWindow, data, updateWindow;
 const version = `v${app.getVersion()}`;
@@ -113,6 +114,12 @@ app.on('ready', () => {
 
     /* Load index.html */
     mainWindow.loadFile('src/index.html');
+
+    /* Open Dev Tools if --debug flag passed */
+    if (debug) {
+      mainWindow.webContents.openDevTools()
+      // add debug menu items if needed
+    }
 
     /* Menus */
     const menu = Menu.buildFromTemplate(menuTemplate);
