@@ -164,6 +164,10 @@ function showStatus(status) {
     updateWindow.webContents.send('updater-data', status);
 }
 
+app.on("window-all-closed", () => {
+  app.quit();
+});
+
 /**
  * Auto updater
  */
