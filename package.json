@@ -43,6 +43,9 @@
     "directories": {
       "buildResources": "assets",
       "output": "release"
-    }
+    },
+    "extraResources": [ // for any assets your app requires (eg tray icon, images, etc)
+      "assets/**/*"
+    ]
   }
 }
